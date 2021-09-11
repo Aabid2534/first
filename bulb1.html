@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv
+        {
+            height: 50px;
+            width: 50px;
+            color: black;
+            line-height: 50px;
+            font-size: 30px;
+            font-family: impact;
+            border-radius: 50%;
+            border: 10px solid green;
+        }
+    </style>
+    <script>
+        function demo(){
+            var dv1 = document.getElementById("img1");
+            var dv2 = document.getElementById("dv");
+            if(dv2.innerText=="ON"){
+                dv2.innerText="OFF";
+                dv2.style.border="5px solid green";
+                dv2.style.color="green";
+                dv1.src="image/s2.png"
+            }
+            else{
+                dv2.innerText="ON";
+                dv2.style.border="5px solid green";
+                dv2.style.color="green";
+                dv1.src="image/s1.png";
+            }
+        }
+        function demo1(){
+        a = window.setInterval(demo,500);
+        }
+        function demo2(){
+        clearInterval(a);
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <img src="image/s1.png" id="img1"/>
+        <div id="dv" onclick="demo()">ON</div>
+        <input type="button" onclick="demo1()" value="START"/>
+        <input type="button" onclick="demo2()" value="STOP"/>
+    </center>
+</body>
+</html>
